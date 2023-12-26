@@ -1,0 +1,36 @@
+<div class="container">
+    <br />
+    <div class="row">
+      <div class="col">
+        <h3>Online Vehicles</h3>
+      </div>
+      <div class="col text-right">
+        <a href="#" routerLink="/Vehicle/create/" routerLinkActive="active" class="btn btn-success btn-sm">Create New</a>
+      </div>
+    </div>
+    <br />
+    <table style="border: 2px solid black" class="table table-striped table-bordered table-sm">
+      <tr style="border: 2px solid black">
+        <th style="border:2px solid black;" colspan="2">VehicleId</th>
+        <th style="border:2px solid black;" colspan="2">Vin</th>
+        <th style="border:2px solid black;" colspan="2">Model</th>
+        <th style="border:2px solid black;" colspan="2">Make</th>
+        <th style="border:2px solid black;" colspan="2">Year</th>
+        <th style="border:2px solid black;" colspan="2">Thumbnail Url</th>
+        <th style="border:2px solid black;" colspan="5">Actions</th>
+      </tr>
+      <tr style="border: 2px solid black" *ngFor="let vehicleObject of vehicles">
+        <td colspan="2" style="border:2px solid black;">{{ vehicleObject.vehicleId }}</td>
+        <td colspan="2" style="border:2px solid black;">{{ vehicleObject.vin }}</td>
+        <td colspan="2" style="border:2px solid black;">{{ vehicleObject.model }}</td>
+        <td colspan="2" style="border:2px solid black;">{{ vehicleObject.make }}</td>
+        <td colspan="2" style="border:2px solid black;">{{ vehicleObject.year }}</td>
+        <td colspan="2" style="border:2px solid black;">{{ vehicleObject.thumbnailUrl }}</td>
+        <td colspan="5" style="border:2px solid black;" class="text-center">
+          <a href="#" routerLinkActive="active" [routerLink]="['/Vehicle/', vehicleObject.vehicleId, 'details']" class="btn btn-info btn-sm">View</a> &nbsp;&nbsp;&nbsp;
+          <a href="#" routerLinkActive="active" [routerLink]="['/Vehicle/', vehicleObject.vehicleId, 'edit']" class="btn btn-primary btn-sm">Edit</a> &nbsp;&nbsp;&nbsp;
+          <button type="button" (click)="deleteVehicle(vehicleObject.vehicleId)" class="btn btn-danger btn-sm">Delete</button> 
+        </td>
+      </tr>  
+    </table>
+  </div>

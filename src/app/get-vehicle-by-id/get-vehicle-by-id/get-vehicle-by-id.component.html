@@ -1,0 +1,22 @@
+<div class="container">
+    <br />
+    <h3>Online Vehicle Details</h3>
+    <br />
+    <div class="card">
+      <div class="card-header">
+        <div class="row">
+          <div class="col text-right">
+            <a href="#" routerLink="/Vehicle/list" class="btn btn-secondary btn-sm">Back To Online Vehicle List</a>
+          </div>
+        </div>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><b>VehicleId :</b> &nbsp;&nbsp;&nbsp; <div [innerHTML] = "vehicle.vehicleId"></div></li>
+        <li class="list-group-item"><b>Vin&nbsp;&nbsp;:</b> &nbsp;&nbsp;&nbsp; {{ vehicle.vin }}</li>
+        <li class="list-group-item"><b>Model&nbsp;&nbsp;:</b> &nbsp;&nbsp;&nbsp; {{ vehicle.model }}</li>
+        <li class="list-group-item"><b>Make&nbsp;&nbsp;:</b> &nbsp;&nbsp;&nbsp; {{ vehicle.make }}</li>
+        <li class="list-group-item"><b>Year&nbsp;&nbsp;:</b> &nbsp;&nbsp;&nbsp; {{ vehicle.year }}</li>
+        <li class="list-group-item"><b>Thumbnail Url&nbsp;&nbsp;:</b> &nbsp;&nbsp;&nbsp; {{ vehicle.thumbnailUrl }}</li>
+      </ul>
+    </div>
+  </div>
